@@ -13,7 +13,7 @@ pipeline {
       steps {
         script {
           // requires SonarQube Scanner 2.8+
-          def scannerHome = tool 'SonarScanner'
+          scannerHome = tool 'SonarScanner'
         }
         withSonarQubeEnv('Sonarqube Server') {
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=newsread-microservice-application"
